@@ -12,6 +12,8 @@ public class Category {
     private int id;
 
     private String category_name;
-    private int picture_id;
+
+    @OneToOne(mappedBy = "category")
+    private Picture picture;
 
 }

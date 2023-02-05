@@ -1,25 +1,24 @@
 package com.clone.airbnb.main.service;
 
-import com.clone.airbnb.main.repository.CategoryRepository;
-import com.clone.airbnb.main.repository.HomeRepository;
-import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Service;
+import com.clone.airbnb.main.domain.Category;
+import com.clone.airbnb.main.dto.CategoryDTO;
 
-import java.util.LinkedHashMap;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
-@Service
-@RequiredArgsConstructor
-public class MainService {
+public interface MainService {
 
-    private final HomeRepository homeRepository;
-    private final CategoryRepository categoryRepository;
-    public Map<String, List<?>> findAll() {
-        Map<String, List<?>> resultMap = new LinkedHashMap<>();
-        resultMap.put("categories", categoryRepository.findAllCategoryWithUrl());
-        resultMap.put("accomodations", homeRepository.findAll());
 
-        return resultMap;
+    default List<CategoryDTO> CategorytoDTO(List<Category> categoryList) {
+        List<CategoryDTO> categoryDTOList = new ArrayList<>();
+        for(Category category : categoryList) {
+            CategoryDTO categoryDTO = CategoryDTO.builder()
+                    .id(category.getId())
+                    .name(category.getCategory_name())
+                    .url(category.getPicture().getUrl())
+                    .build();
+            categoryDTOList.add(categoryDTO);
+        }
+        return categoryDTOList;
     }
 }

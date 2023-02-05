@@ -11,7 +11,13 @@ public class Picture {
     @GeneratedValue
     @Column(name = "picture_id")
     private int id;
-    private int home_id;
-    private int category_id;
+
+//    @OneTo
+//    private int home_id;
+
+    @OneToOne
+    @JoinColumn(name = "category_id")
+    private Category category;
     private String url;
+
 }
