@@ -15,7 +15,7 @@ public class Picture {
 //    @OneTo
 //    private int home_id;
 
-    @OneToOne
+    @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "category_id")
     private Category category;
     private String url;

@@ -1,5 +1,6 @@
 package com.clone.airbnb.main.controller;
 
+import com.clone.airbnb.main.service.MainService;
 import com.clone.airbnb.main.service.impl.MainServiceImpl;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
@@ -16,7 +17,7 @@ import java.util.Map;
 @Log4j2
 public class MainContoller {
 
-    private final MainServiceImpl mainService;
+    private final MainService mainService;
 
     @GetMapping("/mainList")
     public ResponseEntity<Map<String, List<?>>> list() {

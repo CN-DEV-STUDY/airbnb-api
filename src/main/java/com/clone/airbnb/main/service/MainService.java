@@ -5,11 +5,13 @@ import com.clone.airbnb.main.dto.CategoryDTO;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public interface MainService {
 
+    Map<String, List<?>> findAll();
 
-    default List<CategoryDTO> CategorytoDTO(List<Category> categoryList) {
+    default List<CategoryDTO> categoryToDTO(List<Category> categoryList) {
         List<CategoryDTO> categoryDTOList = new ArrayList<>();
         for(Category category : categoryList) {
             CategoryDTO categoryDTO = CategoryDTO.builder()
@@ -21,4 +23,6 @@ public interface MainService {
         }
         return categoryDTOList;
     }
+
+
 }
