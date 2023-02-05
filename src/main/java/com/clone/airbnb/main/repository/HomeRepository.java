@@ -1,6 +1,6 @@
-package com.clone.airbnb.home.repository;
+package com.clone.airbnb.main.repository;
 
-import com.clone.airbnb.home.domain.Home;
+import com.clone.airbnb.main.domain.Home;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface HomeRepository extends JpaRepository<Home, Integer> {

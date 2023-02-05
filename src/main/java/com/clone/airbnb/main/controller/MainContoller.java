@@ -1,31 +1,30 @@
-package com.clone.airbnb.home.controller;
+package com.clone.airbnb.main.controller;
 
-import com.clone.airbnb.home.domain.Home;
-import com.clone.airbnb.home.service.HomeService;
+import com.clone.airbnb.main.service.MainService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/")
 @Log4j2
-public class HomeContoller {
+public class MainContoller {
 
-    private final HomeService homeService;
+    private final MainService mainService;
 
-    @GetMapping
+    @GetMapping("/mainList")
     @ResponseBody
-    public ResponseEntity<List<Home>> list() {
+    public ResponseEntity<Map<String, List<?>>> list() {
         log.info("list 조회");
-        List<Home> list = homeService.findAll();
-        return new ResponseEntity<>(list, HttpStatus.OK);
+        Map<String, List<?>> resultMap = mainService.findAll();
+        return new ResponseEntity<>(resultMap, HttpStatus.OK);
     }
+
 }
