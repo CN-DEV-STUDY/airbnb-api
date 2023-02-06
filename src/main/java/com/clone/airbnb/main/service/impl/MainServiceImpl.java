@@ -21,7 +21,7 @@ public class MainServiceImpl implements MainService {
         Map<String, List<?>> resultMap = new LinkedHashMap<>();
         List<CategoryDTO> categoryList = categoryToDTO(categoryRepository.findAllCategoryWithUrl());
         resultMap.put("categoryList", categoryList);
-        resultMap.put("accomodationList", homeRepository.findAll());
+//        resultMap.put("accomodationList", homeRepository.findAll());
 
         return resultMap;
     }
