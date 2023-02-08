@@ -12,8 +12,9 @@ public class Picture {
     @Column(name = "picture_id")
     private int id;
 
-//    @OneTo
-//    private int home_id;
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "home_id")
+    private Home home;
 
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "category_id")

@@ -1,6 +1,7 @@
 package com.clone.airbnb.main.service.impl;
 
 import com.clone.airbnb.main.dto.CategoryDTO;
+import com.clone.airbnb.main.dto.HomeResponseDTO;
 import com.clone.airbnb.main.repository.CategoryRepository;
 import com.clone.airbnb.main.repository.HomeRepository;
 import com.clone.airbnb.main.service.MainService;
@@ -20,8 +21,9 @@ public class MainServiceImpl implements MainService {
     public Map<String, List<?>> findAll() {
         Map<String, List<?>> resultMap = new LinkedHashMap<>();
         List<CategoryDTO> categoryList = categoryToDTO(categoryRepository.findAllCategoryWithUrl());
+        List<HomeResponseDTO> homeList = homeToDTO(homeRepository.findAllHomeWithUrl());
         resultMap.put("categoryList", categoryList);
-//        resultMap.put("accomodationList", homeRepository.findAll());
+        resultMap.put("homeList", homeList);
 
         return resultMap;
     }

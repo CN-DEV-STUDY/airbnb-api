@@ -107,7 +107,6 @@ create table home(
                          primary key (home_id)
 ) engine=InnoDB character set = utf8;
 
-# USER DB
 create table user(
                      user_id INTEGER NOT NULL auto_increment,
                      email varchar(100) NOT NULL,
