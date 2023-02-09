@@ -1,5 +1,6 @@
 package com.clone.airbnb.user.controller;
 
+import com.clone.airbnb.user.dto.LoginDTO;
 import com.clone.airbnb.user.dto.UserDTO;
 import com.clone.airbnb.user.service.UserService;
 import lombok.RequiredArgsConstructor;
@@ -36,5 +37,13 @@ public class UserController {
         }
 
         return new ResponseEntity<>(resultMap , HttpStatus.OK);
+    }
+
+    @PostMapping("/signIn")
+    public ResponseEntity<Map<String, Object>> signIn(@Validated @RequestBody LoginDTO loginDTO){
+
+        Map<String, Object> resultMap = userService.signIn(loginDTO);
+
+        return new ResponseEntity<>(resultMap, HttpStatus.OK);
     }
 }
