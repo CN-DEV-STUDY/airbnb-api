@@ -1,10 +1,11 @@
 package com.clone.airbnb.hosting.domain;
 
-import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+
+import javax.persistence.*;
 
 @Entity
 @Table(name = "host_user")
@@ -13,6 +14,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @Getter
 public class UserHost {
+
     @Id
     @GeneratedValue
     @Column(name = "user_host_id")

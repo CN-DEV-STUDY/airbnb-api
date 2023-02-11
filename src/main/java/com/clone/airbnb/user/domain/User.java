@@ -1,7 +1,7 @@
 package com.clone.airbnb.user.domain;
 
 import com.clone.airbnb.hosting.domain.Host;
-import jakarta.persistence.*;
+import javax.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;

@@ -1,6 +1,6 @@
 package com.clone.airbnb.main.domain;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 import lombok.Getter;
 
 @Entity

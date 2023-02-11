@@ -1,12 +1,13 @@
 package com.clone.airbnb.hosting.domain;
 
 import com.clone.airbnb.main.domain.Home;
-import jakarta.persistence.*;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
