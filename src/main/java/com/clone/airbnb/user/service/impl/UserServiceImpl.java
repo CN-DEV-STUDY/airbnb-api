@@ -35,6 +35,7 @@ public class UserServiceImpl implements UserService {
         Map<String, Object> resultMap = new HashMap<>();
 
         User user = userRepository.findByEmail(loginDTO.getEmail());
+        encoder = new BCryptPasswordEncoder();
 
         if(user == null){
             resultMap.put("msg", "사용자가 존재하지 않습니다.");
