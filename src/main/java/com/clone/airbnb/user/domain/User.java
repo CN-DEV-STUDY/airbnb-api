@@ -1,5 +1,6 @@
 package com.clone.airbnb.user.domain;
 
+import com.clone.airbnb.hosting.domain.Host;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -13,11 +14,11 @@ import java.time.LocalDate;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@Table(name = "user")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int userId;
-
     private String email;
     private String pwd;
     private String lastName;
@@ -26,4 +27,11 @@ public class User {
     private String profileImg;
     private LocalDate signupDate;
     private String description;
+
+    @OneToOne
+    @JoinTable(name = "user_host",
+                joinColumns = @JoinColumn(name = "user_id"),
+                inverseJoinColumns = @JoinColumn(name = "host_id"))
+    private Host host;
+
 }

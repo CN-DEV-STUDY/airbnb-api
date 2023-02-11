@@ -10,4 +10,5 @@ public interface HomeRepository extends JpaRepository<Home, Integer> {
 
     @Query("select h from Home h join fetch h.picture")
     List<Home> findAllHomeWithUrl();
+
 }

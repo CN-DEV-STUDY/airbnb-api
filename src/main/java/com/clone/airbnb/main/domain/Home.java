@@ -2,10 +2,17 @@ package com.clone.airbnb.main.domain;
 
 import jakarta.annotation.Nullable;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Getter
+@Table(name = "home")
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class Home {
 
     @Id @GeneratedValue

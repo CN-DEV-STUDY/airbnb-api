@@ -4,7 +4,6 @@ import com.clone.airbnb.main.domain.Category;
 import com.clone.airbnb.main.domain.Home;
 import com.clone.airbnb.main.dto.CategoryDTO;
 import com.clone.airbnb.main.dto.HomeResponseDTO;
-import com.clone.airbnb.main.repository.HomeRepository;
 
 import java.util.ArrayList;
 import java.util.List;
